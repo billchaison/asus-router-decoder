@@ -74,7 +74,7 @@ do
    i=$(($i+1))
 done
 
-echo -e "[+] Attempting to recover:\n    SSID, WPA PSK, HTTP admin password"
-strings $out | grep "_wpa_psk=\|_ssid=\|http_passwd="
+echo -e "[+] Attempting to recover:\n    SSID, WPA PSK, HTTP admin username and password"
+strings $out | grep "_wpa_psk=\|_ssid=\|http_passwd=\|http_username="
 rm $out
 ```
