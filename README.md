@@ -1,7 +1,7 @@
 # asus-router-decoder
 Decode text from ASUS wireless router obfuscated saved config files
 
-This bash script can be used to recover plaintext SSID, WPA PSK, and HTTP admin password from an ASUS RT-AC3100 Wireless Router.
+This bash script can be used to recover plaintext SSID, WPA PSK, and HTTP admin username/password from a wireless router such as the ASUS RT-AC3100.
 
 The config file can be generated from the `Administration - Restore/Save/Upload Setting` page and will be named something like `Settings_RT-AC3100.CFG`.
 
@@ -74,7 +74,7 @@ do
    i=$(($i+1))
 done
 
-echo -e "[+] Attempting to recover:\n    SSID, WPA PSK, HTTP admin password"
-strings $out | grep "_wpa_psk=\|_ssid=\|http_passwd="
+echo -e "[+] Attempting to recover:\n    SSID, WPA PSK, HTTP admin username/password"
+strings $out | grep "_wpa_psk=\|_ssid=\|http_username=\|http_passwd="
 rm $out
 ```
